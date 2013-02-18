@@ -9,6 +9,8 @@
   <tr>
     <td><%= link_to ticket.title, ticket_path(ticket) %></td>
     <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
+    <td><%= link_to 'Delete', ticket, :confirm => 'Sure?',
+                                      :method => :delete %>
   </tr>
 <% end %>
 </tbody>
