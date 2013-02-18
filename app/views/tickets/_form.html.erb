@@ -1,0 +1,42 @@
+<%= form_for(@ticket, :html => {:class => "form-horizontal"}) do |f| %>
+
+<div class="control-group field">
+  <%= f.label :title, :class => "control-label" %>
+  <div class="controls">
+    <%= f.text_field :title %>
+    <span class="help-inline">
+      <% if @ticket.errors[:title].any? %>
+        <ul style="color: red;">
+        <% @ticket.errors[:title].each do |msg| %>
+           <li><%= msg %></li>
+        <% end %>
+        </ul>
+      <% end %>
+    </span>
+  </div>
+</div>
+
+<div class="control-group field">
+  <%= f.label :description, :class => "control-label" %>
+  <div class="controls">
+    <%= f.text_area :description, :rows => 5 %>
+    <span class="help-block">
+      <% if @ticket.errors[:description].any? %>
+        <ul style="color: red;">
+        <% @ticket.errors[:description].each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      <% end %>
+    </span>
+  </div>
+</div>
+
+<div class="actions">
+<div class="control-group ">
+  <div class="controls">
+    <%= f.submit :class => "btn" %>
+  </div>
+</div>
+</div>
+<% end %>

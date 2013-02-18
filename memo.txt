@@ -1,0 +1,17 @@
+rails g model Ticket title:string description:string done:boolean
+rake db:migrate
+rails g controller Tickets
+
+rake routes
+-------------------------------------------------
+    tickets GET    /tickets(.:format)          tickets#index
+            POST   /tickets(.:format)          tickets#create
+ new_ticket GET    /tickets/new(.:format)      tickets#new
+edit_ticket GET    /tickets/:id/edit(.:format) tickets#edit
+     ticket GET    /tickets/:id(.:format)      tickets#show
+            PUT    /tickets/:id(.:format)      tickets#update
+            DELETE /tickets/:id(.:format)      tickets#destroy
+-------------------------------------------------
+
+
+
