@@ -32,6 +32,15 @@
   </div>
 </div>
 
+<% @extended_fields.each do |field| %>
+<div class="control-group field">
+  <%= f.label field[:name], :class => "control-label" %>
+  <div class="controls">
+    <input type="text" name="<%= field[:name].to_s %>">
+  </div>
+</div>
+<% end %>
+
 <div class="actions">
 <div class="control-group ">
   <div class="controls">

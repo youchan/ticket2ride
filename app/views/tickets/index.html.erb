@@ -8,8 +8,8 @@
 <% @tickets.each do |ticket| %>
   <tr>
     <td><%= link_to ticket.title, ticket_path(ticket) %></td>
-    <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
-    <td><%= link_to 'Delete', ticket, :confirm => 'Sure?',
+    <td><%= link_to "Edit", edit_ticket_path(ticket) %></td>
+    <td><%= link_to "Delete", ticket, :confirm => "『" + ticket.title + "』を削除します。よろしいですか？",
                                       :method => :delete %>
   </tr>
 <% end %>
@@ -18,7 +18,7 @@
 
 <p>
 <%= link_to(new_ticket_path, :class => "btn btn-primary") do %>
-Create New <i class='icon-white icon-plus'></i>
+Create New <i class="icon-white icon-plus"></i>
 <% end %>
 </p>
 
@@ -27,7 +27,7 @@ Create New <i class='icon-white icon-plus'></i>
 <script>
 $(function() {
     setTimeout(function() {
-        $('#notice').fadeOut('slow');
+        $("#notice").fadeOut("slow");
     }, 800);
 });
 </script>
